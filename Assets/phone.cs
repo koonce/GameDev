@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class phone : MonoBehaviour {
 
-    bool phoneUp = true;
+    public bool phoneUp = true;
+    public float phoneSpeed = 1f;
 
 	// Use this for initialization
 	void Start () {
@@ -13,19 +15,25 @@ public class phone : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown(KeyCode.Space) && phoneUp)
+
+        Rigidbody2D body = GetComponent<Rigidbody2D>();
+        Vector2 currentVel = body.velocity;
+
+        if (Input.GetKeyDown(KeyCode.Space) && phoneUp)
         {
             phoneUp = false;
-            Vector3 location = transform.position;
-            location.y = -10f;
-            transform.position = location;
+                currentVel.y = -phoneSpeed;
         }
         else if (Input.GetKeyDown(KeyCode.Space) && !phoneUp)
         {
             phoneUp = true;
-            Vector3 location = transform.position;
-            location.y = 0f;
-            transform.position = location;
+                currentVel.y = phoneSpeed;
         }
+        else if (transform.position.y >= 0 || transform.position.y <= -8)
+        {
+            currentVel.y = 0f;
+        }
+
+        body.velocity = currentVel;
 	}
 }
