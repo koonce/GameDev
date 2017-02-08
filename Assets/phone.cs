@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class phone : MonoBehaviour {
 
     public bool phoneUp = true;
-    public float phoneSpeed = 1f;
+    public bool phoneMove = false;
+    public float phoneSpeed = 10f;
 
 	// Use this for initialization
 	void Start () {
@@ -19,17 +20,26 @@ public class phone : MonoBehaviour {
         Rigidbody2D body = GetComponent<Rigidbody2D>();
         Vector2 currentVel = body.velocity;
 
+        if (transform.position.y >= 0.3999995 || transform.position.y <= -8.399996)
+        {
+            phoneMove = false;
+        }
+
         if (Input.GetKeyDown(KeyCode.Space) && phoneUp)
         {
+            phoneMove = true;
             phoneUp = false;
                 currentVel.y = -phoneSpeed;
         }
+
         else if (Input.GetKeyDown(KeyCode.Space) && !phoneUp)
         {
+            phoneMove = true;
             phoneUp = true;
                 currentVel.y = phoneSpeed;
         }
-        else if (transform.position.y >= 0 || transform.position.y <= -8)
+
+        else if (!phoneMove)
         {
             currentVel.y = 0f;
         }

@@ -30,6 +30,7 @@ public class noButton : MonoBehaviour {
                 respond.text = answer2.text;
 
                 answer2.text = "thank you!";
+
             }
 
         }
