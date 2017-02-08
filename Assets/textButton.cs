@@ -19,11 +19,13 @@ public class textButton : MonoBehaviour {
             if (GetComponent<Collider2D>().OverlapPoint(mouseWorldPos))
             {
                 Debug.Log("clicked");
-                GameObject home = GameObject.Find("homeScreen");
-                Transform homePos = home.GetComponent<Transform>();
-                Vector3 homePosi = homePos.position;
-                homePosi.x = 15f;
-                homePos.position = homePosi;
+                GameObject textScreen = GameObject.Find("textScreen");
+                Transform tPos = textScreen.GetComponent<Transform>();
+                //bool weTexting = textScreen.GetComponent<yesButton>().texting;
+                Vector3 tPosi = tPos.position;
+                tPosi.z = -5;
+                tPos.position = tPosi;
+                //weTexting = true;
                 atHome = false;
             }
         }
