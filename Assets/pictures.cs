@@ -20,14 +20,24 @@ public class pictures : MonoBehaviour {
         if (Input.GetMouseButtonDown(0))
         {
             Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            if (GetComponent<Collider2D>().OverlapPoint(mouseWorldPos)) { }
-            i++;
+            if (GetComponent<BoxCollider2D>().OverlapPoint(mouseWorldPos))
+            {
 
-        }
-        if (i >= dogs.Length)
-        {
-            i = 0;
-        }
+                i++;
+                if (i >= dogs.Length)
+                {
+                    i = 0;
+                }
 
+            }
+            if (GetComponent<PolygonCollider2D>().OverlapPoint(mouseWorldPos))
+            {
+                if (i <= 0) 
+                {
+                    i = dogs.Length;
+                }
+                i--;
+            }
+        }
     }
 }
