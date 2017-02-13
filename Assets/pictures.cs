@@ -7,6 +7,8 @@ public class pictures : MonoBehaviour {
     public Sprite[] dogs = new Sprite[3];
     int i = 0;
 
+    public bool pics;
+
 	// Use this for initialization
 	void Start () {
 
@@ -15,28 +17,43 @@ public class pictures : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
-        spriteRenderer.sprite = dogs[i];
-        if (Input.GetMouseButtonDown(0))
+        if (transform.position.z <= -5)
         {
-            Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            if (GetComponent<BoxCollider2D>().OverlapPoint(mouseWorldPos))
+            pics = true;
+        }
+        else
+        {
+            pics = false;
+        }
+        if (pics)
+        {
+            if (GameObject.Find("app2").GetComponent<picButton>().picOpen)
             {
-
-                i++;
-                if (i >= dogs.Length)
+                SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+                spriteRenderer.sprite = dogs[i];
+                if (Input.GetMouseButtonDown(0))
                 {
-                    i = 0;
-                }
+                    Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                    if (GetComponent<BoxCollider2D>().OverlapPoint(mouseWorldPos))
+                    {
 
-            }
-            if (GetComponent<PolygonCollider2D>().OverlapPoint(mouseWorldPos))
-            {
-                if (i <= 0) 
-                {
-                    i = dogs.Length;
+                        i++;
+                        if (i >= dogs.Length)
+                        {
+                            i = 0;
+                        }
+
+                    }
+                    if (GetComponent<PolygonCollider2D>().OverlapPoint(mouseWorldPos))
+                    {
+                        if (i <= 0)
+                        {
+                            i = dogs.Length;
+                        }
+                        i--;
+                    }
+
                 }
-                i--;
             }
         }
     }

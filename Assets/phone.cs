@@ -8,6 +8,9 @@ public class phone : MonoBehaviour {
     public bool phoneUp = true;
     public bool phoneMove = false;
     public float phoneSpeed = 10f;
+    public float messageMoveSpeed = 4f;
+    bool goingDown = false;
+    bool goingUp = false;
 
 	// Use this for initialization
 	void Start () {
@@ -16,34 +19,48 @@ public class phone : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        Vector3 pos = transform.localPosition;
+        Vector3 offScreen = new Vector3(0, -8, 1);
+        Vector3 onScreen = new Vector3(0, 0, 1);
 
-        Rigidbody2D body = GetComponent<Rigidbody2D>();
-        Vector2 currentVel = body.velocity;
-
-        if (transform.position.y >= 0.3999995 || transform.position.y <= -8.399996)
+        if (Input.GetKeyUp(KeyCode.Space))
         {
-            phoneMove = false;
+            if (phoneUp)
+            {
+                goingDown = true;
+            }
+            if (!phoneUp)
+            {
+                goingUp = true;
+            }
+        }
+        if (goingDown)
+        {
+            pos = Vector3.MoveTowards(pos, offScreen, messageMoveSpeed * Time.deltaTime);
+        }
+        if (goingUp)
+        {
+            pos = Vector3.MoveTowards(pos, onScreen, messageMoveSpeed * Time.deltaTime);
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && phoneUp)
+
+        if (pos == offScreen)
         {
-            phoneMove = true;
             phoneUp = false;
-                currentVel.y = -phoneSpeed;
+                goingDown = false;
+                goingUp = false;
         }
-
-        else if (Input.GetKeyDown(KeyCode.Space) && !phoneUp)
+        if (pos == onScreen)
         {
-            phoneMove = true;
             phoneUp = true;
-                currentVel.y = phoneSpeed;
-        }
+                goingDown = false;
+                goingUp = false;
+        }            
 
-        else if (!phoneMove)
-        {
-            currentVel.y = 0f;
-        }
+        //else if (Input.GetKeyDown(KeyCode.Space) && !phoneUp)
+        // {
 
-        body.velocity = currentVel;
+        //}
+        transform.position = pos;
 	}
 }

@@ -11,7 +11,6 @@ public class backButton : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetMouseButtonDown(0))
             if (Input.GetMouseButtonDown(0))
             {
                 Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -19,12 +18,10 @@ public class backButton : MonoBehaviour {
                 {
                     Debug.Log("clicked");
                     GameObject textScreen = GameObject.Find("textScreen");
-                    //var textScript = textScreen.GetComponent<yesButton>();
                     Transform tPos = textScreen.GetComponent<Transform>();
                     Vector3 tPosi = tPos.position;
                     tPosi.z = 1;
                     tPos.position = tPosi;
-                    //textScript.texting = false;
                 }
             }
     }

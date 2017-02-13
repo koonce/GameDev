@@ -21,12 +21,9 @@ public class textButton : MonoBehaviour {
                 Debug.Log("clicked");
                 GameObject textScreen = GameObject.Find("textScreen");
                 Transform tPos = textScreen.GetComponent<Transform>();
-                //bool weTexting = textScreen.GetComponent<yesButton>().texting;
                 Vector3 tPosi = tPos.position;
-                tPosi.z = -5;
+                tPosi.z = -5f;
                 tPos.position = tPosi;
-                //weTexting = true;
-                atHome = false;
             }
         }
     }

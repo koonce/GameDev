@@ -2,9 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class picButton : MonoBehaviour {
-
-    public bool picOpen = false;
+public class backButton2 : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -18,14 +16,13 @@ public class picButton : MonoBehaviour {
             Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             if (GetComponent<Collider2D>().OverlapPoint(mouseWorldPos))
             {
-                Debug.Log("Pic Clicked!");
-                GameObject pics = GameObject.Find("picScreen");
-                Transform picPos = pics.GetComponent<Transform>();
-                Vector3 picPosi = picPos.position;
-                picPosi.z = -5f;
-                picPos.position = picPosi;
+                Debug.Log("go back from pictures");
+                GameObject screen = GameObject.Find("picScreen");
+                Transform tPos = screen.GetComponent<Transform>();
+                Vector3 tPosi = tPos.position;
+                tPosi.z = 1;
+                tPos.position = tPosi;
             }
-            picOpen = true;
         }
     }
 }
