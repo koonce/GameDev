@@ -82,6 +82,10 @@ public class yesButton : MonoBehaviour
                     respond.text = answer2.text;
 
                     answer2.text = nResponses[i];
+                    if (g >= nResponses.Length)
+                    {
+                        g = 0;
+                    }
                     i = g;
                 }
             }

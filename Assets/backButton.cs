@@ -8,21 +8,24 @@ public class backButton : MonoBehaviour {
 	void Start () {
 		
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update() {
+        GameObject textScreen = GameObject.Find("textScreen");
+        Transform tPos = textScreen.GetComponent<Transform>();
+        if (tPos.position.z <= -5)
+        {
             if (Input.GetMouseButtonDown(0))
             {
                 Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 if (GetComponent<Collider2D>().OverlapPoint(mouseWorldPos))
                 {
-                    Debug.Log("clicked");
-                    GameObject textScreen = GameObject.Find("textScreen");
-                    Transform tPos = textScreen.GetComponent<Transform>();
+                    Debug.Log("go back from texting");
                     Vector3 tPosi = tPos.position;
                     tPosi.z = 1;
                     tPos.position = tPosi;
                 }
             }
+        }
     }
 }

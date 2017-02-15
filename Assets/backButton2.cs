@@ -11,17 +11,21 @@ public class backButton2 : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetMouseButtonDown(0))
+        GameObject screen = GameObject.Find("picScreen");
+        Transform tPos = screen.GetComponent<Transform>();
+
+        if (tPos.position.z <= -5)
         {
-            Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            if (GetComponent<Collider2D>().OverlapPoint(mouseWorldPos))
+            if (Input.GetMouseButtonDown(0))
             {
-                Debug.Log("go back from pictures");
-                GameObject screen = GameObject.Find("picScreen");
-                Transform tPos = screen.GetComponent<Transform>();
-                Vector3 tPosi = tPos.position;
-                tPosi.z = 1;
-                tPos.position = tPosi;
+                Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                if (GetComponent<Collider2D>().OverlapPoint(mouseWorldPos))
+                {
+                    Debug.Log("go back from pictures");
+                    Vector3 tPosi = tPos.position;
+                    tPosi.z = 1;
+                    tPos.position = tPosi;
+                }
             }
         }
     }

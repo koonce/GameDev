@@ -23,7 +23,7 @@ public class phone : MonoBehaviour {
         Vector3 offScreen = new Vector3(0, -8, 1);
         Vector3 onScreen = new Vector3(0, 0, 1);
 
-        if (Input.GetKeyUp(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             if (phoneUp)
             {

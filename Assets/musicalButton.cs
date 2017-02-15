@@ -13,17 +13,20 @@ public class musicalButton : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (!GameObject.Find("Phone").GetComponent<openApp>().open)
         {
-            Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            if (GetComponent<Collider2D>().OverlapPoint(mouseWorldPos))
+            if (Input.GetMouseButtonDown(0))
             {
-                Debug.Log("click music");
-                GameObject musicScreen = GameObject.Find("musicScreen");
-                Transform tPos = musicScreen.GetComponent<Transform>();
-                Vector3 tPosi = tPos.position;
-                tPosi.z = -5f;
-                tPos.position = tPosi;
+                Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                if (GetComponent<Collider2D>().OverlapPoint(mouseWorldPos))
+                {
+                    Debug.Log("click music");
+                    GameObject musicScreen = GameObject.Find("musicScreen");
+                    Transform tPos = musicScreen.GetComponent<Transform>();
+                    Vector3 tPosi = tPos.position;
+                    tPosi.z = -5f;
+                    tPos.position = tPosi;
+                }
             }
         }
     }
