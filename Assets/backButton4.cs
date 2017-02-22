@@ -13,8 +13,7 @@ public class backButton4 : MonoBehaviour {
 	void Update () {
         GameObject screen = GameObject.Find("diaryScreen");
         Transform mPos = screen.GetComponent<Transform>();
-
-        if (mPos.position.z <= -5f)
+        if (mPos.position.z <= -5)
         {
             if (Input.GetMouseButtonDown(0))
             {

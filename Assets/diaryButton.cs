@@ -4,13 +4,10 @@ using UnityEngine;
 
 public class diaryButton : MonoBehaviour {
 
-    bool isItOpen;
 
+    // Use this for initialization
+    void Start () {
 
-	// Use this for initialization
-	void Start () {
-
-        //isItOpen = GameObject.Find("Phone").GetComponent<openApp>().open;
     }
 	
 	// Update is called once per frame
@@ -23,16 +20,14 @@ public class diaryButton : MonoBehaviour {
                 if (GetComponent<Collider2D>().OverlapPoint(mouseWorldPos))
                 {
                     Debug.Log("click diary");
-                    GameObject diaryScreen = GameObject.Find("diaryScreen");
-                    Transform tPos = diaryScreen.GetComponent<Transform>();
+                    GameObject musicScreen = GameObject.Find("diaryScreen");
+                    Transform tPos = musicScreen.GetComponent<Transform>();
                     Vector3 tPosi = tPos.position;
                     tPosi.z = -5f;
                     tPos.position = tPosi;
                 }
             }
-
         }
-
     }
     
 }

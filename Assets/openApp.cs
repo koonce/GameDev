@@ -24,7 +24,6 @@ public class openApp : MonoBehaviour {
 		if (texting.position.z <= -5 || pictures.position.z <= -5 || music.position.z <= -5 || diary.position.z <= -5)
         {
             open = true;
-            Debug.Log("we open");
         }
         else
         {

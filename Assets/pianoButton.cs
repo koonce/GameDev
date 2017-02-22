@@ -2,16 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class playMusic : MonoBehaviour {
+public class pianoButton : MonoBehaviour {
 
-    public AudioClip guitar;
-    public Sprite pause, play;
-
-    AudioSource audio;
+    public AudioClip piano;
 
 	// Use this for initialization
 	void Start () {
-        audio = GetComponent<AudioSource>();
+		
 	}
 
     // Update is called once per frame
@@ -21,30 +18,21 @@ public class playMusic : MonoBehaviour {
         Transform mPos = screen.GetComponent<Transform>();
         if (mPos.position.z <= -5)
         {
+            AudioSource audio = GameObject.Find("play").GetComponent<AudioSource>();
             if (Input.GetMouseButtonDown(0))
             {
                 Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 if (GetComponent<BoxCollider2D>().OverlapPoint(mouseWorldPos))
                 {
-                    if (!audio.isPlaying)
+                    bool playing = audio.isPlaying;
+                    Debug.Log("piano pressed");
+                    audio.clip = piano;
+                    if (playing)
                     {
                         audio.Play();
-                        Debug.Log("turn on music");
-                        //}
+                    }
 
-                        //}
-                        //if (audio.isPlaying)
-                        //{
-                        GetComponent<SpriteRenderer>().sprite = pause;
-                        //   audio.Pause();
-                    }
-                    else
-                    {
-                        audio.Pause();
-                        GetComponent<SpriteRenderer>().sprite = play;
-                    }
                 }
-
             }
         }
     }
