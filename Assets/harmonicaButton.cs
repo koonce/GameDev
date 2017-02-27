@@ -15,10 +15,6 @@ public class harmonicaButton : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        GameObject screen = GameObject.Find("musicScreen");
-        Transform mPos = screen.GetComponent<Transform>();
-        if (mPos.position.z <= -5)
-        {
             AudioSource audio = GameObject.Find("play").GetComponent<AudioSource>();
             if (Input.GetMouseButtonDown(0))
             {
@@ -35,6 +31,6 @@ public class harmonicaButton : MonoBehaviour {
 
                 }
             }
-        }
+        
     }
 }

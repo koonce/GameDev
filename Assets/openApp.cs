@@ -8,7 +8,7 @@ public class openApp : MonoBehaviour {
     Transform texting;
     Transform pictures;
     Transform music;
-    Transform diary;
+    GameObject diary;
 
 
     // Use this for initialization
@@ -16,18 +16,23 @@ public class openApp : MonoBehaviour {
         texting = GameObject.Find("textScreen").GetComponent<Transform>();
         pictures = GameObject.Find("picScreen").GetComponent<Transform>();
         music = GameObject.Find("musicScreen").GetComponent<Transform>();
-        diary = GameObject.Find("diaryScreen").GetComponent<Transform>();
+        diary = GameObject.Find("diaryScreen");  //.GetComponent<Transform>();
     }
 	
 	// Update is called once per frame
 	void Update () {
-		if (texting.position.z <= -5 || pictures.position.z <= -5 || music.position.z <= -5 || diary.position.z <= -5)
+		/* if (texting.position.z <= -5 || pictures.position.z <= -5 || music.position.z <= -5 || diary.position.z <= -5)
         {
             open = true;
         }
         else
         {
             open = false;
+        }
+        */
+        if (diary.activeInHierarchy)
+        {
+            open = true;
         }
 	}
 }

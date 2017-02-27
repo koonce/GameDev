@@ -24,17 +24,7 @@ public class yesButton : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.z <= -5)
-        {
-            texting = true;
-        }
-        else
-        {
-            texting = false;
-        }
 
-        if (texting)
-        {
             if (Input.GetMouseButtonDown(0))
             {
                 Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -88,7 +78,6 @@ public class yesButton : MonoBehaviour
                     i = g;
                 }
             }
-        }
         
     }
 }

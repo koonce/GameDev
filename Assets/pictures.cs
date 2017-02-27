@@ -17,18 +17,7 @@ public class pictures : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (transform.position.z <= -5)
-        {
-            pics = true;
-        }
-        else
-        {
-            pics = false;
-        }
-        if (pics)
-        {
-            if (GameObject.Find("app2").GetComponent<picButton>().picOpen)
-            {
+
                 SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
                 spriteRenderer.sprite = dogs[i];
                 if (Input.GetMouseButtonDown(0))
@@ -54,7 +43,7 @@ public class pictures : MonoBehaviour {
                     }
 
                 }
-            }
-        }
+            
+        
     }
 }

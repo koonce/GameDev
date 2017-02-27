@@ -17,10 +17,6 @@ public class playMusic : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        GameObject screen = GameObject.Find("musicScreen");
-        Transform mPos = screen.GetComponent<Transform>();
-        if (mPos.position.z <= -5)
-        {
             if (Input.GetMouseButtonDown(0))
             {
                 Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -45,7 +41,6 @@ public class playMusic : MonoBehaviour {
                     }
                 }
 
-            }
         }
     }
 }
