@@ -41,12 +41,10 @@ public class diaryText : MonoBehaviour {
                     //-= howLittle;
 
                 }
-                if (GetComponent<PolygonCollider2D>().OverlapPoint(mouseWorldPos))
+                if (GetComponent<PolygonCollider2D>().OverlapPoint(mouseWorldPos) && howMuch < dEntries.Length-1)
                 {
-                    if (howMuch < dEntries.Length)
-                    {
                         howMuch++;
-                    }
+
 
                    /* if (howMuch + howLittle < entries.Length)
                     {

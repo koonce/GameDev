@@ -7,8 +7,9 @@ public class yesButton : MonoBehaviour
     public float counter = 1f;
     public float scaleSpeed = 4f;
     public bool texting = false;
+    public bool answer = false;
 
-    int i;
+    public int i;
     int g = 5;
     public string[] yResponses = new string[] { "alright", "okay", "yeah", "yes", "yep", "vegetables?", "don't peel", "eat!" };
     public string[] nResponses = new string[] { "no", "no sir", "nah", "never", "oh", "fruit?", "peel them", "don't eat!" };
@@ -40,9 +41,8 @@ public class yesButton : MonoBehaviour
                 if (GetComponent<BoxCollider2D>().OverlapPoint(mouseWorldPos))
                 {
 
+
                     Debug.Log("Yes");
-                    TextMesh textObject = GameObject.Find("question").GetComponent<TextMesh>();
-                    textObject.text = qS[i];
 
                     TextMesh answer1 = GameObject.Find("yes").GetComponent<TextMesh>();
 
@@ -55,10 +55,7 @@ public class yesButton : MonoBehaviour
                     answer2.text = nResponses[i];
 
                     i++;
-                    if (i > 5)
-                    {
-                        i = 1;
-                    }
+
                 }
             }
             if (Input.GetMouseButtonDown(0))
@@ -66,6 +63,8 @@ public class yesButton : MonoBehaviour
                 Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 if (GetComponent<PolygonCollider2D>().OverlapPoint(mouseWorldPos))
                 {
+
+                    answer = true;
 
                     i = g;
                     g++;
