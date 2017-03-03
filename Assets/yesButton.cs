@@ -8,6 +8,7 @@ public class yesButton : MonoBehaviour
     public float scaleSpeed = 4f;
     public bool texting = false;
     public bool answer = false;
+    public bool yesss;
 
     public int i;
     int g = 5;
@@ -45,7 +46,7 @@ public class yesButton : MonoBehaviour
                     answer2.text = nResponses[i];
 
                     i++;
-
+                yesss = true;
                 }
             }
             if (Input.GetMouseButtonDown(0))
@@ -53,7 +54,7 @@ public class yesButton : MonoBehaviour
                 Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 if (GetComponent<PolygonCollider2D>().OverlapPoint(mouseWorldPos))
                 {
-
+                yesss = false;
                     answer = true;
 
                     i = g;

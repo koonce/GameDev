@@ -106,7 +106,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &30312807
 Transform:
   m_ObjectHideFlags: 0
@@ -826,6 +826,7 @@ GameObject:
   - component: {fileID: 983698143}
   - component: {fileID: 983698145}
   - component: {fileID: 983698144}
+  - component: {fileID: 983698146}
   m_Layer: 0
   m_Name: response
   m_TagString: Untagged
@@ -840,7 +841,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 983698142}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.47571978, y: 0.09043719, z: -1}
+  m_LocalPosition: {x: 0.362, y: 0.466, z: -1}
   m_LocalScale: {x: 0.10230533, y: 0.18074664, z: 1}
   m_Children: []
   m_Father: {fileID: 30312807}
@@ -898,6 +899,21 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
+--- !u!114 &983698146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 983698142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b4fc69effcf61e4585aedfc8140c006, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  messages: []
+  messageText: {fileID: 1637416157225332, guid: ae64b93dea531e9438b9574cd8573461,
+    type: 2}
+  messageMoveSpeed: 10
 --- !u!1 &1012891354
 GameObject:
   m_ObjectHideFlags: 0
@@ -990,7 +1006,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1041560974}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.47673792, y: -0.19344531, z: -1}
+  m_LocalPosition: {x: 0.47673792, y: -0.141, z: -1}
   m_LocalScale: {x: 0.102305345, y: 0.18074661, z: 1}
   m_Children: []
   m_Father: {fileID: 30312807}
@@ -1007,7 +1023,7 @@ TextMesh:
   m_OffsetZ: 0
   m_CharacterSize: 0.4
   m_LineSpacing: 1
-  m_Anchor: 5
+  m_Anchor: 2
   m_Alignment: 0
   m_TabSize: 4
   m_FontSize: 20
@@ -1476,7 +1492,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1413041545}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.427, y: 0.366, z: -3}
+  m_LocalPosition: {x: 0.437, y: 0.392, z: -3}
   m_LocalScale: {x: 0.054720197, y: 0.08866955, z: 1}
   m_Children: []
   m_Father: {fileID: 30312807}
@@ -2907,11 +2923,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4641144736460170, guid: ca54b6b40c76d7647b632b7c55af63bd, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.47366214
+      value: -0.446
       objectReference: {fileID: 0}
     - target: {fileID: 4641144736460170, guid: ca54b6b40c76d7647b632b7c55af63bd, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.38104773
+      value: 0.12
       objectReference: {fileID: 0}
     - target: {fileID: 4641144736460170, guid: ca54b6b40c76d7647b632b7c55af63bd, type: 2}
       propertyPath: m_LocalPosition.z
@@ -3278,6 +3294,7 @@ MonoBehaviour:
   scaleSpeed: 4
   texting: 0
   answer: 0
+  yesss: 0
   i: 0
   yResponses:
   - alright
