@@ -16,6 +16,8 @@ public class yesButton : MonoBehaviour
     public string[] nResponses = new string[] { "no", "no sir", "nah", "never", "oh", "fruit?", "peel them", "don't eat!" };
     public string[] qS = new string[] { "blue", "red", "green", "orange", "purple", "apples", "bananas", "pears" };
 
+    public Vector3 response;
+
     // Use this for initialization
     void Start()
     {
@@ -32,13 +34,10 @@ public class yesButton : MonoBehaviour
                 if (GetComponent<BoxCollider2D>().OverlapPoint(mouseWorldPos))
                 {
 
-
+                response = GameObject.Find("yes").GetComponent<Transform>().position;
                     Debug.Log("Yes");
 
                     TextMesh answer1 = GameObject.Find("yes").GetComponent<TextMesh>();
-
-                    TextMesh respond = GameObject.Find("response").GetComponent<TextMesh>();
-                    respond.text = answer1.text;
 
                     answer1.text = yResponses[i];
 
@@ -54,6 +53,7 @@ public class yesButton : MonoBehaviour
                 Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 if (GetComponent<PolygonCollider2D>().OverlapPoint(mouseWorldPos))
                 {
+                response = GameObject.Find("no").GetComponent<Transform>().position;
                 yesss = false;
                     answer = true;
 
@@ -69,7 +69,6 @@ public class yesButton : MonoBehaviour
                     TextMesh respond = GameObject.Find("response").GetComponent<TextMesh>();
 
                     TextMesh answer2 = GameObject.Find("no").GetComponent<TextMesh>();
-                    respond.text = answer2.text;
 
                     answer2.text = nResponses[i];
                     if (g >= nResponses.Length)

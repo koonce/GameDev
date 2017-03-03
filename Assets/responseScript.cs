@@ -21,6 +21,7 @@ public class responseScript : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        _text.text = "response";
 
         // First Method, text scales in. 
         float scale = transform.localScale.x;

@@ -87,7 +87,7 @@ TextMesh:
   m_Anchor: 3
   m_Alignment: 0
   m_TabSize: 4
-  m_FontSize: 20
+  m_FontSize: 15
   m_FontStyle: 0
   m_RichText: 1
   m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
@@ -105,7 +105,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df98b0574bba1ad4289611c3bf5635d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  answered: 0
-  sent: 0
   scaleSpeed: 4
-  currentText: 0
