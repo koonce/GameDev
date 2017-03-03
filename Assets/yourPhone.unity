@@ -106,7 +106,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &30312807
 Transform:
   m_ObjectHideFlags: 0
@@ -926,7 +926,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1012891355
 Transform:
   m_ObjectHideFlags: 0
@@ -1228,7 +1228,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1355971941}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.47107136, y: 0.261, z: -1}
+  m_LocalPosition: {x: -0.47107136, y: 0.448, z: -1}
   m_LocalScale: {x: 0.103984796, y: 0.18680155, z: 1}
   m_Children: []
   m_Father: {fileID: 1012891355}
@@ -1248,7 +1248,7 @@ TextMesh:
   m_Anchor: 0
   m_Alignment: 0
   m_TabSize: 4
-  m_FontSize: 150
+  m_FontSize: 140
   m_FontStyle: 0
   m_RichText: 1
   m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
@@ -1311,11 +1311,11 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Points:
     m_Paths:
-    - - {x: 0.6229393, y: -2.8737025}
-      - {x: 0.9394467, y: -3.5496619}
-      - {x: 0.49321058, y: -3.7550917}
-      - {x: 0.014217214, y: -3.4781725}
-      - {x: 0.21412547, y: -2.9496717}
+    - - {x: 8.848565, y: -4.126336}
+      - {x: 9.206827, y: -4.4682593}
+      - {x: 8.885853, y: -4.8824625}
+      - {x: 8.156331, y: -4.647298}
+      - {x: 8.230977, y: -4.2440596}
 --- !u!61 &1355971947
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1327,9 +1327,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0.35755205, y: 0.5763685}
+  m_Offset: {x: 0.4410572, y: -4.496807}
   serializedVersion: 2
-  m_Size: {x: 0.71513194, y: 0.8780035}
+  m_Size: {x: 0.96566355, y: 0.7527548}
 --- !u!1 &1357353181
 GameObject:
   m_ObjectHideFlags: 0
@@ -1352,13 +1352,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1357353181}
-  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: -0.7071068}
-  m_LocalPosition: {x: -0.42323834, y: -0.36087322, z: 0}
-  m_LocalScale: {x: 0.013542812, y: 0.013175712, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.432, y: -0.392, z: -1}
+  m_LocalScale: {x: 0.008, y: 0.02, z: 1}
   m_Children: []
   m_Father: {fileID: 1012891355}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 270}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1357353183
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1702,7 +1702,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4823106751815836, guid: 63ff545974cfef84ab7885b18ecade44, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -3
+      value: -6
       objectReference: {fileID: 0}
     - target: {fileID: 4823106751815836, guid: 63ff545974cfef84ab7885b18ecade44, type: 2}
       propertyPath: m_LocalRotation.x
@@ -1726,7 +1726,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1150247419248204, guid: 63ff545974cfef84ab7885b18ecade44, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4823106751815836, guid: 63ff545974cfef84ab7885b18ecade44, type: 2}
       propertyPath: m_LocalScale.x
@@ -1820,10 +1820,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   messages:
+  - this is a question
   - are you there?
-  - where are you?
-  - please respond
-  - what are you doing?
+  - wow, ur so funny
+  - ur not welcome
+  - bitch
+  - what are you wearing?
+  - hot.
+  - i'm kidding. JESUS
   currentMessageIndex: 0
   moveTime: 0.9
   messageText: {fileID: 1263171234146686, guid: 331dbf5bc902f6a44bd25380b8b660a5,
@@ -2122,7 +2126,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1648629488}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0019871173, y: 0.0051311282, z: -5}
+  m_LocalPosition: {x: -0.0019871173, y: 0.0051311282, z: -6}
   m_LocalScale: {x: 0.95848507, y: 0.9334314, z: 1}
   m_Children:
   - {fileID: 2081857417}
@@ -2193,8 +2197,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1675954921}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.3992814, y: 0.30414036, z: 0}
-  m_LocalScale: {x: 0.085317805, y: 0.15326758, z: 0.82048345}
+  m_LocalPosition: {x: 0.445, y: 0.409, z: -1}
+  m_LocalScale: {x: 0.039728608, y: 0.0791695, z: 0.82048345}
   m_Children: []
   m_Father: {fileID: 1012891355}
   m_RootOrder: 1
@@ -2276,7 +2280,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1697322978
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2321,7 +2325,7 @@ Transform:
   m_PrefabInternal: {fileID: 1473408126}
   m_GameObject: {fileID: 1697322977}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0, z: -3}
+  m_LocalPosition: {x: 0, y: -0, z: -6}
   m_LocalScale: {x: 0.9659578, y: 0.9376357, z: 1}
   m_Children: []
   m_Father: {fileID: 969973662}
@@ -3077,7 +3081,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2012187854}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.0068415045, z: -5}
+  m_LocalPosition: {x: 0, y: 0.0068415045, z: -6}
   m_LocalScale: {x: 0.97080535, y: 0.951429, z: 1}
   m_Children:
   - {fileID: 532856201}
@@ -3144,13 +3148,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2034977696}
-  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0.43259698, y: 0.3769929, z: 0}
-  m_LocalScale: {x: 0.013542812, y: 0.013175712, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
+  m_LocalPosition: {x: -0.429, y: -0.403, z: -1}
+  m_LocalScale: {x: 0.008, y: 0.02, z: 1}
   m_Children: []
   m_Father: {fileID: 1012891355}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!212 &2034977698
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3359,36 +3363,8 @@ MonoBehaviour:
   counter: 1
   scaleSpeed: 4
   texting: 0
-  answer: 0
-  yesss: 0
   i: 0
-  yResponses:
-  - alright
-  - okay
-  - yeah
-  - yes
-  - yep
-  - vegetables?
-  - don't peel
-  - eat!
-  nResponses:
-  - no
-  - no sir
-  - nah
-  - never
-  - oh
-  - fruit?
-  - peel them
-  - don't eat!
-  qS:
-  - blue
-  - red
-  - green
-  - orange
-  - purple
-  - apples
-  - bananas
-  - pears
+  currentResponse: 
   response: {x: 0, y: 0, z: 0}
 --- !u!60 &2124392429
 PolygonCollider2D:
@@ -3405,8 +3381,8 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: 0.49689355, y: -0.49999964}
-      - {x: 0.49378738, y: -0.022192882}
-      - {x: -0.5, y: 0.0085245585}
+      - {x: 0.4981024, y: -0.12000984}
+      - {x: -0.4956849, y: -0.08929208}
       - {x: -0.5, y: -0.5}
 --- !u!61 &2124392430
 BoxCollider2D:
@@ -3419,6 +3395,6 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0.2534163}
+  m_Offset: {x: 0.0021575321, y: 0.25341627}
   serializedVersion: 2
-  m_Size: {x: 0.99999994, y: 0.49316537}
+  m_Size: {x: 0.9870547, y: 0.49316537}

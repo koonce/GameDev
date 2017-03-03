@@ -9,10 +9,13 @@ public class responseScript : MonoBehaviour {
     public float scaleSpeed = 4f;
 
 
+
+
     // Use this for initialization
     void Start()
     {
         _text = GetComponent<TextMesh>();
+        
         //transform.localScale = Vector3.zero;
 
 
@@ -21,7 +24,8 @@ public class responseScript : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        _text.text = "response";
+        string j = GameObject.Find("respond").GetComponent<yesButton>().currentResponse;
+        _text.text = j;
 
         // First Method, text scales in. 
         float scale = transform.localScale.x;

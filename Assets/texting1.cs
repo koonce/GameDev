@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class texting1 : MonoBehaviour {
     public string[] messages;
+    string j;
     public int currentMessageIndex = 0;
     public float moveTime;
 
@@ -53,12 +54,16 @@ public class texting1 : MonoBehaviour {
         _lastResponse.transform.position = lastResPos;
         _lastMessageObj = Instantiate(messageText) as GameObject;
         _lastMessageObj.transform.position = firstPos;
+        currentMessageIndex = 1;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        int i = GameObject.Find("respond").GetComponent<yesButton>().i;
+        currentMessageIndex = i;
+        j = GameObject.Find("respond").GetComponent<yesButton>().currentResponse;
         Vector3 response = GameObject.Find("respond").GetComponent<yesButton>().response;
         responseLocation = response;
 
@@ -75,19 +80,13 @@ public class texting1 : MonoBehaviour {
         if (pressed)
         {
             textExiting = true;
-            //timer += Time.deltaTime;
 
-
-            // Invoke("killOffResponse", .1f);
             Invoke("killOffText", 1.3f);
-            //Invoke("clicked", 0.1f);
         }
         if (_lastMessageObj != null)
         {
             if (textExiting)
             {
-                // if (textOff)
-                // {
                 
                 Invoke("pleaseLeave", .1f);
                 if (!getOff2)
@@ -109,9 +108,6 @@ public class texting1 : MonoBehaviour {
                     Invoke("killOffResponse", .1f);
                 }
 
-                //  if (!move)
-                //  {
-                //    _lastResponse.transform.localPosition = Vector3.MoveTowards(_lastResponse.transform.localPosition, firstResPos, messageMoveSpeed * Time.deltaTime);
 
                 Invoke("notExiting", 1f);
 
@@ -120,9 +116,6 @@ public class texting1 : MonoBehaviour {
             if (!getOff)
             {
                     _lastResponse.transform.localPosition = Vector3.MoveTowards(_lastResponse.transform.localPosition, firstResPos, messageMoveSpeed * Time.deltaTime);
-                
-
-                   // _lastResponse.transform.localPosition = Vector3.MoveTowards(_lastResponse.transform.localPosition, lastResPos, messageMoveSpeed * Time.deltaTime);
 
                     Invoke("moveMe", moveTime);
             }
@@ -134,19 +127,6 @@ public class texting1 : MonoBehaviour {
                 _lastResponse.transform.localPosition = Vector3.MoveTowards(_lastResponse.transform.localPosition, lastResPos, messageMoveSpeed * Time.deltaTime);
 
                 Invoke("notEntering", 1f);
-                //   if (!getOff)
-                // {
-                //        _lastResponse.transform.localPosition = Vector3.MoveTowards(_lastResponse.transform.localPosition, lastResPos, responseMoveSpeed * Time.deltaTime);
-                //  }
-                //  if (getOff)
-                //  {
-
-                //   }
-                //  }
-                //  if (textOff)
-                // {
-                //    _lastResponse.transform.localPosition = Vector3.MoveTowards(_lastResponse.transform.localPosition, offResPos, messageMoveSpeed * Time.deltaTime);
-                // }
 
 
             }
@@ -165,6 +145,8 @@ public class texting1 : MonoBehaviour {
         _lastMessageObj = Instantiate(messageText) as GameObject;
         _lastMessageObj.transform.localPosition = new Vector3(-4.65f, -1.20f, -3);
         // Apply the string to the text here probably // 
+        TextMesh text = _lastMessageObj.GetComponent<TextMesh>();
+        text.text = messages[currentMessageIndex];
         textEntering = true;
         textOff = false;
         textExiting = false;
