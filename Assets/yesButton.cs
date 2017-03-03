@@ -61,7 +61,6 @@ public class yesButton : MonoBehaviour
                     g++;
                     Debug.Log("No");
                     TextMesh textObject = GameObject.Find("question").GetComponent<TextMesh>();
-                    textObject.text = qS[i];
 
                     TextMesh answer1 = GameObject.Find("yes").GetComponent<TextMesh>();
                     answer1.text = yResponses[i];

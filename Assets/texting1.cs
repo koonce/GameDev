@@ -41,6 +41,7 @@ public class texting1 : MonoBehaviour {
 
     int responseIndex = 0;
     bool getOff = true;
+    bool getOff2 = false;
 
     //float timer = 0f;
     //float delay = .1f;
@@ -87,8 +88,21 @@ public class texting1 : MonoBehaviour {
             {
                 // if (textOff)
                 // {
-                _lastMessageObj.transform.localPosition
-                        = Vector3.MoveTowards(_lastMessageObj.transform.localPosition, lastPos, messageLeaveSpeed * Time.deltaTime);
+                
+                Invoke("pleaseLeave", .1f);
+                if (!getOff2)
+                {
+                    _lastMessageObj.transform.localPosition
+                            = Vector3.MoveTowards(_lastMessageObj.transform.localPosition, lastPos, messageLeaveSpeed * Time.deltaTime);
+                    Invoke("pleaseLeave2", .9f);
+                }
+
+                if (getOff2)
+                {
+                    _lastMessageObj.transform.localPosition
+                     = Vector3.MoveTowards(_lastMessageObj.transform.localPosition, offPos, messageLeaveSpeed * Time.deltaTime);
+                }
+
                 if (getOff)
                 {
                     _lastResponse.transform.localPosition = Vector3.MoveTowards(_lastResponse.transform.localPosition, offResPos, responseMoveSpeed * Time.deltaTime);
@@ -108,7 +122,7 @@ public class texting1 : MonoBehaviour {
                     _lastResponse.transform.localPosition = Vector3.MoveTowards(_lastResponse.transform.localPosition, firstResPos, messageMoveSpeed * Time.deltaTime);
                 
 
-                    _lastResponse.transform.localPosition = Vector3.MoveTowards(_lastResponse.transform.localPosition, lastResPos, messageMoveSpeed * Time.deltaTime);
+                   // _lastResponse.transform.localPosition = Vector3.MoveTowards(_lastResponse.transform.localPosition, lastResPos, messageMoveSpeed * Time.deltaTime);
 
                     Invoke("moveMe", moveTime);
             }
@@ -145,6 +159,7 @@ public class texting1 : MonoBehaviour {
     void killOffText()
     {
         getOff = true;
+        getOff2 = false;
         Destroy(_lastMessageObj);
         move = true;
         _lastMessageObj = Instantiate(messageText) as GameObject;
@@ -187,6 +202,11 @@ public class texting1 : MonoBehaviour {
     void pleaseLeave()
     {
         getOff = false;
+    }
+
+    void pleaseLeave2()
+    {
+            getOff2 = true;
     }
     
     
