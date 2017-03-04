@@ -7,17 +7,18 @@ public class playMusic : MonoBehaviour {
     public AudioClip guitar;
     public Sprite pause, play;
 
-    AudioSource audio;
+    public AudioSource audio;
 
 	// Use this for initialization
 	void Start () {
-        audio = GetComponent<AudioSource>();
+        
 	}
 
     // Update is called once per frame
     void Update()
     {
-            if (Input.GetMouseButtonDown(0))
+        audio = GameObject.Find("audioObject").GetComponent<AudioSource>();
+        if (Input.GetMouseButtonDown(0))
             {
                 Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 if (GetComponent<BoxCollider2D>().OverlapPoint(mouseWorldPos))

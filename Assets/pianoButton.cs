@@ -14,7 +14,7 @@ public class pianoButton : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-            AudioSource audio = GameObject.Find("play").GetComponent<AudioSource>();
+            AudioSource audio = GameObject.Find("audioObject").GetComponent<AudioSource>();
             if (Input.GetMouseButtonDown(0))
             {
                 Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);

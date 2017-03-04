@@ -14,10 +14,10 @@ public class yesButton : MonoBehaviour
     public int i = 1;
     int g = 5;
     string[] yResponses = new string[] {
-        "yes button", "yes", "no, I'm actually busy", "someone's in a great mood", "YOU'RE the bitch", "wtf?", "thanks", "you're hilarious"
+        "yes button", "yes", "no, I'm actually busy", "someone's in a great mood", "YOU'RE the bitch", "wtf?", "thanks", "you're hilarious", "[CLICK TO END GAME]"
     };
     string[] nResponses = new string[] {
-       "no button", "no", "thank you", "bitch", "thanks", "dungarees", "i know", "don't call me Jesus"
+       "no button", "no", "thank you", "bitch", "thanks", "dungarees", "i know", "don't call me Jesus", "[CLICK TO END GAME]"
     };
 
     public string currentResponse;
@@ -61,6 +61,10 @@ public class yesButton : MonoBehaviour
                 }
                 else if (i == 3 || i == 4 || i == 6 || i == 7)
                 {
+                    i = 8;
+                }
+                else if (i == 8)
+                {
                     Invoke("endOfGame", 3f);
                     Debug.Log("end");
                 }
@@ -95,6 +99,10 @@ public class yesButton : MonoBehaviour
                     i = 3;
                 }
                 else if (i == 3 || i == 4 || i == 6 || i == 7)
+                {
+                    i = 8;
+                }
+                else if (i == 8)
                 {
                     Invoke("endOfGame", 3f);
                     Debug.Log("end");
