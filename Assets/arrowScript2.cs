@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class arrowScript2 : MonoBehaviour {
     public GameObject scenes;
-    float moveSpeed = 4f;
+    float moveSpeed = 6f;
     bool moveLeft = false;
     bool moveLeft2 = false;
     public bool leftPressed;
@@ -52,39 +52,21 @@ public class arrowScript2 : MonoBehaviour {
                 {
                     index = 1;
                     i = 0;
-              
-                   // Debug.Log("go to scene1 pleaaase");
+
                 }
                 else if (index == 3)
                 {
                     index = 2;
                     i = 1;
-                  //  Debug.Log("go to scene2, yo");
+
                 }
-                moveLeft = true;
-               // moveLeft = false;
-                //    else
-                //  {
-                //  moveLeft1 = false;
-                //  moveLeft2 = false;
-                // }
+         
 
             }
         }
 
-      /*  if (rightPressed)
-        {
-            moveLeft1 = false;
-            moveLeft2 = false;
-        }
-        
-    */
 
             pos = Vector3.MoveTowards(pos, scene[i], moveSpeed * Time.deltaTime);
-
-
-
-        
 
         scenes.GetComponent<Transform>().position = pos;
         scenes.GetComponent<sceneScript>().sceneIndex = index;

@@ -12,6 +12,8 @@ public class yesButton : MonoBehaviour
     public static Color blue = new Color(0, 0, 1, 1);
     public static Color black = new Color(0, 0, 0, 1);
 
+    public int strangerIndex = 0;
+
     bool clicked = false;
 
     public int i = 1;
@@ -25,7 +27,6 @@ public class yesButton : MonoBehaviour
 
     public string currentResponse;
 
-    //public string[] qS = new string[] { "blue", "red", "green", "orange", "purple", "apples", "bananas", "pears" };
 
     public Vector3 response;
 
@@ -88,6 +89,7 @@ public class yesButton : MonoBehaviour
                 else if (i == 3 || i == 4 || i == 6 || i == 7)
                 {
                     i = 8;
+                    strangerIndex = 1;
                 }
                 else if (i == 8)
                 {

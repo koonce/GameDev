@@ -11,6 +11,9 @@ public class texting1 : MonoBehaviour {
     public GameObject messageText;
     public GameObject responseText;
 
+    public GameObject texter;
+    Transform textScreen;
+
     public float messageMoveSpeed = 10f;
     public float messageLeaveSpeed = 10f;
     public float responseMoveSpeed = 7f;
@@ -51,8 +54,10 @@ public class texting1 : MonoBehaviour {
     void Start()
     {
         _lastResponse = Instantiate(responseText) as GameObject;
+        //_lastResponse.transform.parent = textSceen;
         _lastResponse.transform.position = lastResPos;
         _lastMessageObj = Instantiate(messageText) as GameObject;
+       // _lastMessageObj.transform.parent = textScreen;
         _lastMessageObj.transform.position = firstPos;
         currentMessageIndex = 1;
 
@@ -61,6 +66,7 @@ public class texting1 : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        textScreen = texter.GetComponent<Transform>();   
         int i = GameObject.Find("respond").GetComponent<yesButton>().i;
         currentMessageIndex = i;
         j = GameObject.Find("respond").GetComponent<yesButton>().currentResponse;
@@ -143,6 +149,7 @@ public class texting1 : MonoBehaviour {
         Destroy(_lastMessageObj);
         move = true;
         _lastMessageObj = Instantiate(messageText) as GameObject;
+        //_lastMessageObj.transform.parent = textScreen;
         _lastMessageObj.transform.localPosition = new Vector3(-4.65f, -1.20f, -3);
         // Apply the string to the text here probably // 
         TextMesh text = _lastMessageObj.GetComponent<TextMesh>();
@@ -172,6 +179,7 @@ public class texting1 : MonoBehaviour {
     {
         Destroy(_lastResponse);
         _lastResponse = Instantiate(responseText) as GameObject;
+       // _lastResponse.transform.parent = textScreen;
         _lastResponse.transform.localPosition = responseLocation;
         getOff = false;
     }

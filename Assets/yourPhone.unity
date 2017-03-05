@@ -605,7 +605,7 @@ Transform:
   - {fileID: 1393309682}
   - {fileID: 735749867}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &276171576
 Prefab:
@@ -3100,11 +3100,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   words: {fileID: 1030425764}
+  texts: {fileID: 2124392425}
   talk:
-  - "hey good \n lookin'"
-  - "the weather \n is fine \n today"
-  - "politics... \n am i right?"
-  - "take \n care now"
+  - since
+  - u
+  - been
+  - gone
 --- !u!61 &1078965692
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3728,9 +3729,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   words: {fileID: 1833852522}
+  texts: {fileID: 2124392425}
   talk:
   - "i don't \n want no"
   - scrub
+  - a scrub is
+  - a guy
+  - who can't
+  - get no
+  - love from
+  - me
   - i love tlc
 --- !u!61 &1343345593
 BoxCollider2D:
@@ -4553,6 +4561,70 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!1 &1426393616
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1426393618}
+  - component: {fileID: 1426393617}
+  m_Layer: 0
+  m_Name: PhoneSpace
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &1426393617
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1426393616}
+  m_Enabled: 0
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: e5ffc914a4a6c06478a0695e80323a2a, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+--- !u!4 &1426393618
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1426393616}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -5}
+  m_LocalScale: {x: 15.11962, y: 10.068748, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1444934265
 Prefab:
   m_ObjectHideFlags: 0
@@ -4837,6 +4909,7 @@ MonoBehaviour:
     type: 2}
   responseText: {fileID: 1637416157225332, guid: ae64b93dea531e9438b9574cd8573461,
     type: 2}
+  texter: {fileID: 30312806}
   messageMoveSpeed: 10
   messageLeaveSpeed: 5
   responseMoveSpeed: 7
@@ -5200,6 +5273,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   words: {fileID: 1802476670}
+  texts: {fileID: 2124392425}
   talk:
   - "hey good \n lookin'"
   - "the weather \n is fine \n today"
@@ -5281,7 +5355,7 @@ Transform:
   m_LocalScale: {x: 0.09119924, y: 0.21214588, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1638956805
 GameObject:
@@ -7240,7 +7314,7 @@ Transform:
   m_LocalScale: {x: 0.09119924, y: 0.21214588, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!114 &2114014274
 MonoBehaviour:
@@ -7440,6 +7514,7 @@ MonoBehaviour:
   counter: 1
   scaleSpeed: 4
   texting: 0
+  strangerIndex: 0
   i: 0
   currentResponse: 
   response: {x: 0, y: 0, z: 0}
