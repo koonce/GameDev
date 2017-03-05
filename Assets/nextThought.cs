@@ -7,7 +7,7 @@ public class nextThought : MonoBehaviour {
     int saying = 0;
         public GameObject words;
 
-    string[] talk = new string[]
+    public string[] talk = new string[]
 {
         "hey good \n lookin'",
         "the weather \n is fine \n today",
