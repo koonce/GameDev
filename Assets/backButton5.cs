@@ -5,7 +5,7 @@ using UnityEngine;
 public class backButton5 : MonoBehaviour {
 
     public GameObject gameScreen, homeScreen;
-    public GameObject ball;
+    GameObject ball;
 
 	// Use this for initialization
 	void Start () {
@@ -14,6 +14,7 @@ public class backButton5 : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        ball = GameObject.Find("ball(Clone)");
 
         if (Input.GetMouseButtonDown(0))
         {

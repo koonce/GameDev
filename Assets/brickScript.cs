@@ -5,6 +5,8 @@ using UnityEngine;
 public class brickScript : MonoBehaviour {
 
     public GameObject reset;
+    public GameObject game;
+    public int bricks;
  
 	// Use this for initialization
 	void Start () {
@@ -14,20 +16,14 @@ public class brickScript : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (reset.GetComponent<resetGameButton>().reset)
-        {
-            if (gameObject == null)
-            {
-                gameObject.SetActive(true);
-                Debug.Log("weHearYou");
-            }
-        }
+        //bricks = game.GetComponent<GM>().brickNumber;
     }
 
     void OnCollisionEnter2D(Collision2D otherCollider)
     {
         if (otherCollider.gameObject.tag == "ball")
         {
+            game.GetComponent<GM>().brickNumber--;
             gameObject.SetActive(false);
         }
     }

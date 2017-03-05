@@ -12,6 +12,8 @@ public class ballScript : MonoBehaviour {
     private bool ballInPlay;
     bool noCollisions = true;
     bool collisions = false;
+    bool hitRight = false;
+    bool hitLeft = false;
 
     
 
@@ -47,6 +49,18 @@ public class ballScript : MonoBehaviour {
             noCollisions = false;
         }
 
+        if (hitRight)
+        {
+            rb.AddForce(new Vector3(5, 0, 0));
+            hitRight = false;
+        }
+
+        if (hitLeft)
+        {
+            rb.AddForce(new Vector3(-5, 0, 0));
+            hitLeft = false;
+        }
+
 
         // if (!noCollisions)
         // {
@@ -56,17 +70,23 @@ public class ballScript : MonoBehaviour {
         // }
     }
 
-    void OnCollisionEnter2D(Collision2D otherCollider)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        if (otherCollider.gameObject.tag == "right")
+        if (tag == "right")
         {
-            rb.AddForce(new Vector3(5, 0, 0));
+            hitRight = true;
+            Debug.Log("move right");
         }
 
-        if (otherCollider.gameObject.tag == "left")
+        if (tag == "left")
         {
-            rb.AddForce(new Vector3(-5, 0, 0));
+            hitLeft = true;
+            Debug.Log("move left");
         }
+    }
+
+    void OnCollisionEnter2D(Collision2D otherCollider)
+    {
 
         if (otherCollider.gameObject.tag == "lose")
         {

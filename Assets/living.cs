@@ -7,6 +7,7 @@ public class living : MonoBehaviour {
     public int life = 3;
     public GameObject resetter;
     public GameObject gameOver;
+    public GameObject winGame;
     public bool ableToBeReset = false;
 
 	// Use this for initialization
@@ -23,12 +24,14 @@ public class living : MonoBehaviour {
             if (ableToBeReset)
             {
                 life = 3;
+                GameObject.Find("gameManager").GetComponent<GM>().brickNumber = 12;
                 gameOver.SetActive(false);
+                winGame.SetActive(false);
                 ableToBeReset = false;
             }
             resetting = false;
         }
-
+        
     }
 
     void OnCollisionEnter2D(Collision2D otherCollider)
