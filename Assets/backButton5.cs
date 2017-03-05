@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class backButton5 : MonoBehaviour {
 
-    public GameObject pong, homeScreen;
+    public GameObject gameScreen, homeScreen;
+    public GameObject ball;
 
 	// Use this for initialization
 	void Start () {
@@ -19,8 +20,9 @@ public class backButton5 : MonoBehaviour {
             Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             if (GetComponent<Collider2D>().OverlapPoint(mouseWorldPos))
             {
+                Destroy(ball);
                 Debug.Log("go back from pong");
-                pong.SetActive(false);
+                gameScreen.SetActive(false);
                 homeScreen.SetActive(true);
             }
         }

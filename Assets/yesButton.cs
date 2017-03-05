@@ -9,6 +9,9 @@ public class yesButton : MonoBehaviour
     public float scaleSpeed = 4f;
     public bool texting = false;
 
+    public static Color blue = new Color(0, 0, 1, 1);
+    public static Color black = new Color(0, 0, 0, 1);
+
     bool clicked = false;
 
     public int i = 1;
@@ -39,10 +42,33 @@ public class yesButton : MonoBehaviour
         text.text = yResponses[i];
         TextMesh text2 = GameObject.Find("no").GetComponent<TextMesh>();
         text2.text = nResponses[i];
+        Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Color textColor = GameObject.Find("yes").GetComponent<TextMesh>().color;
+        Color textColor2 = GameObject.Find("no").GetComponent<TextMesh>().color;
+
+       /* if (GetComponent<BoxCollider2D>().OverlapPoint(mouseWorldPos))
+        {
+            Debug.Log("overlapping");
+            textColor = blue;
+        }
+        else
+        {
+            textColor = black;
+        }
+
+        if (GetComponent<PolygonCollider2D>().OverlapPoint(mouseWorldPos))
+        {
+            textColor2 = blue;
+        }
+        else
+        {
+            textColor2 = black;
+        }
+
+    */
 
         if (Input.GetMouseButtonDown(0))
             {
-                Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 if (GetComponent<BoxCollider2D>().OverlapPoint(mouseWorldPos))
                 {
                 currentResponse = yResponses[i];
@@ -79,7 +105,6 @@ public class yesButton : MonoBehaviour
         }
             if (Input.GetMouseButtonDown(0))
             {
-                Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 if (GetComponent<PolygonCollider2D>().OverlapPoint(mouseWorldPos))
                 {
                 currentResponse = nResponses[i];
