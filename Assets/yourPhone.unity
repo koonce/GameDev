@@ -4902,7 +4902,7 @@ MonoBehaviour:
   - what are you wearing?
   - hot.
   - i'm kidding. JESUS
-  - are you ready to stop playing?
+  - stop playing?
   currentMessageIndex: 0
   moveTime: 0.9
   messageText: {fileID: 1263171234146686, guid: 331dbf5bc902f6a44bd25380b8b660a5,

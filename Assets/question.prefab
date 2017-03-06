@@ -82,12 +82,12 @@ TextMesh:
   m_GameObject: {fileID: 1263171234146686}
   m_Text: Are you there?
   m_OffsetZ: 0
-  m_CharacterSize: 0.4
+  m_CharacterSize: 0.04
   m_LineSpacing: 1
   m_Anchor: 3
   m_Alignment: 0
   m_TabSize: 4
-  m_FontSize: 15
+  m_FontSize: 20
   m_FontStyle: 0
   m_RichText: 1
   m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}

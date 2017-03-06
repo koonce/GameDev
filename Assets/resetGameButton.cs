@@ -32,7 +32,7 @@ public class resetGameButton : MonoBehaviour {
                 reset2 = true;
                 GameObject.Find("forbidden").GetComponent<living>().ableToBeReset = true;
                 Debug.Log("definitely clicking");
-                gameOver.SetActive(false);
+              //  gameOver.SetActive(false);
 
             }
         }
